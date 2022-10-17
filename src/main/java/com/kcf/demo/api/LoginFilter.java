@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Login {
-
-    private  LoginData login;
+public class LoginFilter {
+    private String collection;
+    private String database;
+    private String dataSource;
+    private LogFilter filter;
 }

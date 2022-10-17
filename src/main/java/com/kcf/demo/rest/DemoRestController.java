@@ -95,11 +95,11 @@ public class DemoRestController
     }
 
     @PostMapping (path =  "/mongodb/login")
-    public  ResponseEntity<Login> login(@RequestBody FilterRequest filterRequest)
+    public  ResponseEntity<Login> login(@RequestBody LoginFilter loginFilter)
     {
         HttpHeaders headers = new HttpHeaders();
         headers.set("api-key","yDRk6c5OxH3cAaH5j6AECnWiY8QHr36gGKJZWwBOdJcjYSl9EuuZJ4eIPSQx2x5Y");
-        HttpEntity<FilterRequest> request = new HttpEntity<>(filterRequest,headers);
+        HttpEntity<LoginFilter> request = new HttpEntity<>(loginFilter,headers);
 
         Login log = restTemplate.postForObject("https://data.mongodb-api.com/app/data-ohzey/endpoint/data/v1/action/findOne"
         ,request
