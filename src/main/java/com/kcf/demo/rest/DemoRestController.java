@@ -25,26 +25,24 @@ public class DemoRestController
 {
     @Autowired
     RestTemplate restTemplate;
-    List<Demo> demos = new ArrayList<>();
 
-    @PostMapping()
-    public ResponseEntity<Demo> insertData(@RequestBody Demo demo)
+
+    @GetMapping(path = "/mongodb/list")
+    public ResponseEntity<List<DocumentData>> getAllReservations(@RequestBody FilterRequest filterRequest)
     {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("api-key","yDRk6c5OxH3cAaH5j6AECnWiY8QHr36gGKJZWwBOdJcjYSl9EuuZJ4eIPSQx2x5Y");
+        HttpEntity<FilterRequest> request = new HttpEntity<>(filterRequest,headers);
 
-        demos.add(demo);
-        //addDemo(demo);
+        DocumentList documentList = restTemplate.postForObject("https://data.mongodb-api.com/app/data-ohzey/endpoint/data/v1/action/find"
+                , request
+                , DocumentList.class);
 
-        return ResponseEntity.ok(demo);
+        return ResponseEntity.ok(documentList.getDocuments());
 
     }
 
-    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Demo> getDemo(@PathVariable Integer id )
-    {
 
-        return ResponseEntity.ok(demos.get(id));
-
-    }
 
     @PostMapping(path = "/mongodb/filter")
     public ResponseEntity<Document> addDemo(@RequestBody FilterRequest filterRequest)
