@@ -18,6 +18,8 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
+
+@CrossOrigin
 @RequestMapping(path = "/demo")
 public class DemoRestController
 {
@@ -106,7 +108,6 @@ public class DemoRestController
         ,Login.class);
 
         return ResponseEntity.ok(log);
-
 
     }
 
