@@ -94,7 +94,7 @@ public class DemoRestController
         return ResponseEntity.ok(doc);
     }
 
-    @PostMapping (path =  "/mongodb/Login")
+    @PostMapping (path =  "/mongodb/login")
     public  ResponseEntity<Login> login(@RequestBody FilterRequest filterRequest)
     {
         HttpHeaders headers = new HttpHeaders();
