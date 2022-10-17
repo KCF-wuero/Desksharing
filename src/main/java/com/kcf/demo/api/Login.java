@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Login {
 
-    private  Login LoginData;
+    private LoginData login;
 }
