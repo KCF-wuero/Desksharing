@@ -93,5 +93,22 @@ public class DemoRestController
                 , Document.class);
         return ResponseEntity.ok(doc);
     }
+
+    @PostMapping (path =  "/mongodb/Login")
+    public  ResponseEntity<Login> login(@RequestBody FilterRequest filterRequest)
+    {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("api-key","yDRk6c5OxH3cAaH5j6AECnWiY8QHr36gGKJZWwBOdJcjYSl9EuuZJ4eIPSQx2x5Y");
+        HttpEntity<FilterRequest> request = new HttpEntity<>(filterRequest,headers);
+
+        Login log = restTemplate.postForObject("https://data.mongodb-api.com/app/data-ohzey/endpoint/data/v1/action/findOne"
+        ,request
+        ,Login.class);
+
+        return ResponseEntity.ok(log);
+
+
+    }
+
 }
 
