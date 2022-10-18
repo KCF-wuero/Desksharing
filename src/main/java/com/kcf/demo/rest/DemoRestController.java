@@ -30,7 +30,7 @@ public class DemoRestController
     RestTemplate restTemplate;
 
 
-    @GetMapping(path = "/mongodb/list")
+    @PostMapping(path = "/mongodb/list")
     public ResponseEntity<List<DocumentData>> getAllReservations(@RequestBody FilterRequest filterRequest)
     {
         HttpHeaders headers = new HttpHeaders();
