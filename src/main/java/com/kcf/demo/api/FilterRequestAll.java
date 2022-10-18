@@ -12,4 +12,6 @@ public class FilterRequestAll {
     private String collection;
     private String database;
     private String dataSource;
+
+
 }

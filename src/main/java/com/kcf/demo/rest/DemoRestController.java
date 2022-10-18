@@ -15,6 +15,7 @@ import javax.print.Doc;
 import java.rmi.ServerException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -23,6 +24,8 @@ import java.util.List;
 @RequestMapping(path = "/demo")
 public class DemoRestController
 {
+
+
     @Autowired
     RestTemplate restTemplate;
 

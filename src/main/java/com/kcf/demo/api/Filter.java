@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Filter {
+public class Filter
+{
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tableId;
 }
